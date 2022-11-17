@@ -3,8 +3,8 @@ import MonthPicker from "./MonthPicker";
 
 function DatePicker({date, setDate}) {
     return <div>
-        <YearPicker month={date.getMonth()} setDate={setDate}/>
-        <MonthPicker year={date.getFullYear()} setDate={setDate}/>
+        <YearPicker date={date} setDate={setDate}/>
+        <MonthPicker date={date} setDate={setDate}/>
     </div>
 }
 
