@@ -1,11 +1,13 @@
-function Calendar({date, currentDate, setCurrentDate}) {
+import '../index.css';
+
+function Calendar({date, setDate}) {
     let firstDayOfMonth = new Date(date.getFullYear(), date.getMonth());
     let next = new Date(date.getFullYear(), date.getMonth() + 1);
     let daysInMonth = (next - firstDayOfMonth)/(1000 * 3600 * 24);
     let index = (firstDayOfMonth.getDay() + 6) % 7;
 
     function clickHandler(event) {
-        setCurrentDate(`${date.getFullYear()}-${date.getMonth() + 1}-${event.target.textContent}`)
+        setDate(new Date(`${date.getFullYear()}-${date.getMonth() + 1}-${event.target.textContent}`))
     }
 
     let ROWS;
@@ -39,7 +41,7 @@ function Calendar({date, currentDate, setCurrentDate}) {
     for (let i = 0; i < ROWS; i++) {
         tr = [];
         for (let j = 0; j < 7; j++) {
-            tr.push(<td key={j.toString()} onClick={event => clickHandler(event)}>{k > 0 && k <= daysInMonth ? k : ''}</td>)
+            tr.push(<td key={j.toString()} onClick={event => clickHandler(event)} className={j === 6 || j === 7 ? 'day-off' : null}>{k > 0 && k <= daysInMonth ? k : ''}</td>)
             k++;
         } 
         table.push(<tr key={i.toString()}>{tr}</tr>)
@@ -47,8 +49,19 @@ function Calendar({date, currentDate, setCurrentDate}) {
 
     return (
         <table border='1'>
+            <thead>
+                <tr>
+                    <th>Пн</th>
+                    <th>Вт</th>
+                    <th>Ср</th>
+                    <th>Чт</th>
+                    <th>Пт</th>
+                    <th className="day-off">Сб</th>
+                    <th className="day-off">Вс</th>
+                </tr>
+            </thead>
             <tbody>
-            {table}
+                {table}
             </tbody>
         </table>
     )
