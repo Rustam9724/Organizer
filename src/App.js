@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import DatePicker from './components/DatePicker'; 
 import Calendar from './components/Calendar';
 import ToDoList from './components/ToDoList';
+import Header from './components/Header';
 
 function App() {
   const [date, setDate] = useState(new Date());
@@ -36,9 +37,12 @@ function App() {
 
   return (
       <div>
+          <Header />
+        <main>
           <DatePicker date={date} setDate={setDate}/>
           <Calendar date={date} setDate={setDate}/>
           <ToDoList date={date} notesList={notesList} setNotesList={setNotesList}/>
+        </main>
       </div>
   )
 }

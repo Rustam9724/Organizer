@@ -12,10 +12,18 @@ code {
     monospace;
 }
 
+.nav-wrapper {
+  padding: 0 1.5rem 0;
+}
+
 .deleted {
   text-decoration: line-through;
 }
 
 .day-off {
   color: red
+}
+
+.date-picker {
+  height: 100px;
 }
