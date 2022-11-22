@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {
@@ -12,8 +13,65 @@ code {
     monospace;
 }
 
-.nav-wrapper {
+.header {
   padding: 0 1.5rem 0;
+  height: 64px;
+}
+
+.header h1 {
+  margin: 0 auto;
+  width: max-content;
+  font-size: 3rem;
+  color: #455a64;
+  font-family: sans-serif;
+}
+
+.date-section {
+  display: flex;
+  align-items: center;
+  padding: 5rem 0 0;
+}
+
+@media (max-width: 549px) {
+  .date-section {
+    flex-direction: column;
+  }
+}
+
+.calendar {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (max-width: 549px) {
+  .calendar {
+    width: 90%;
+  }
+}
+
+table {
+  border: 2px solid #455a64;
+}
+
+tr {
+  border-bottom: none;
+}
+
+.daysOfWeek {
+  background-color: #455a64;
+}
+
+td, th {
+  text-align: center;
+  width: 20px;
+}
+
+td {
+  cursor: pointer;
+}
+
+.day-number:hover {
+  background-color: #455a64;
 }
 
 .deleted {
@@ -26,5 +84,11 @@ code {
 
 .date-picker {
   width: 25%;
-  margin: 0 auto;
+  margin: 0 auto 50px;
+}
+
+@media (max-width: 549px) {
+  .date-picker {
+    width: 60%;
+  }
 }

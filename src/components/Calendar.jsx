@@ -41,16 +41,29 @@ function Calendar({date, setDate}) {
     for (let i = 0; i < ROWS; i++) {
         tr = [];
         for (let j = 0; j < 7; j++) {
-            tr.push(<td key={j.toString()} onClick={event => clickHandler(event)} className={j === 6 || j === 7 ? 'day-off' : null}>{k > 0 && k <= daysInMonth ? k : ''}</td>)
+            let clsName;
+            if ((k > 0 && k <= daysInMonth) && (j === 6 || j === 7)) {
+                clsName = 'day-off day-number'
+            } else if (k > 0 && k <= daysInMonth) {
+                clsName = 'day-number'
+            } else {
+                clsName = '';
+            }
+            tr.push(<td 
+                        key={j.toString()} 
+                        onClick={event => clickHandler(event)} 
+                        className={clsName}>
+                            {k > 0 && k <= daysInMonth ? k : ''}
+                    </td>)
             k++;
         } 
         table.push(<tr key={i.toString()}>{tr}</tr>)
     }
 
     return (
-        <table border='1'>
+        <table border='1' className="calendar">
             <thead>
-                <tr>
+                <tr className="daysOfWeek">
                     <th>Пн</th>
                     <th>Вт</th>
                     <th>Ср</th>

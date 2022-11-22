@@ -1,3 +1,4 @@
+import M from 'materialize-css';
 import { Select } from 'react-materialize';
 
 let months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];

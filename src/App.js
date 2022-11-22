@@ -39,8 +39,10 @@ function App() {
       <div>
           <Header />
         <main>
-          <DatePicker date={date} setDate={setDate}/>
-          <Calendar date={date} setDate={setDate}/>
+          <div className="date-section">
+            <DatePicker date={date} setDate={setDate}/>
+            <Calendar date={date} setDate={setDate}/>
+          </div>
           <ToDoList date={date} notesList={notesList} setNotesList={setNotesList}/>
         </main>
       </div>
