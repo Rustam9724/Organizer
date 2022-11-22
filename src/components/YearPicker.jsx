@@ -30,8 +30,9 @@ function YearPicker({date, setDate}) {
                 outDuration: 250
                 }
             }}
-            value=""
-         >
+            defaultValue={date.getFullYear()}
+        >
+            <option disabled>Выберите год</option>
             {result}
         </Select>
     )

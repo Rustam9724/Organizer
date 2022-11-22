@@ -1,21 +1,6 @@
 import M from 'materialize-css';
 import { Navbar, Icon} from 'react-materialize';
 
-// function Header() {
-//     return (
-//         <nav>
-//             <div className="nav-wrapper">
-//                 <a href="/" className="brand-logo">Organizer</a>
-//                 <ul id="nav-mobile" className="right hide-on-med-and-down">
-//                 </ul>
-//             </div>
-//         </nav>
-//     )
-    
-// }
-
-// export default Header;
-
 function Header() {
     return (
         <Navbar

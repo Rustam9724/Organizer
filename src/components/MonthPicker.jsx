@@ -1,3 +1,5 @@
+import { Select } from 'react-materialize';
+
 let months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 
 function MonthPicker({date, setDate}) {
@@ -38,9 +40,38 @@ function MonthPicker({date, setDate}) {
         result.push(opt);
     }
 
-    return <select onChange={event => changeHandler(event)} defaultValue={months[date.getMonth()]}>
-        {result}
-    </select>
+    // return <select onChange={event => changeHandler(event)} defaultValue={months[date.getMonth()]}>
+    //     {result}
+    // </select>
+
+    return (
+        <Select
+            id="Select-33"
+            multiple={false}
+            onChange={changeHandler} 
+            options={{
+                classes: '',
+                dropdownOptions: {
+                alignment: 'left',
+                autoTrigger: true,
+                closeOnClick: true,
+                constrainWidth: true,
+                coverTrigger: true,
+                hover: false,
+                inDuration: 150,
+                onCloseEnd: null,
+                onCloseStart: null,
+                onOpenEnd: null,
+                onOpenStart: null,
+                outDuration: 250
+                }
+            }}
+            defaultValue={months[date.getMonth()]}
+         >
+             <option disabled>Выберите месяц</option>
+            {result}
+        </Select>
+    )
 }
 
 export default MonthPicker;
