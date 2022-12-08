@@ -35,8 +35,10 @@ function Task({date, task, notesList, setNotesList}) {
                         value={value} 
                         onChange={(event) => setValue(event.target.value)} 
                         onBlur={blurHandler} onKeyDown={keyDownHandler}
+                        autoFocus
+                        className="task-input"
                     />
-                 : <span className={task.isDeleted ? 'deleted' : null}>{value}</span>
+                 : <span className={task.isDeleted ? 'deleted task-span' : 'task-span'}>{value}</span>
 
     return result;    
 }

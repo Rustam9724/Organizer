@@ -92,3 +92,54 @@ td {
     width: 60%;
   }
 }
+
+.todo-list {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.todo-list > div > p {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+}
+
+.add-button {
+  font-family: sans-serif;
+  background-color: #455a64;
+  border: none;
+  padding: 0.5rem;
+  color: white;
+  border: 1px solid #455a64;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+.task-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  column-gap: 1rem;
+  border-bottom: 1px solid #40c4ff;
+  margin-bottom: 1rem;
+  padding: 0 0 0.5rem 0;
+  align-items: center;
+}
+
+.task-span {
+  flex-grow: 1;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+
+.task-input {
+  height: 2rem;
+}
+
+.edit-button {
+  background-color: #455a64;
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: 2rem;
+}

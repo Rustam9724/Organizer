@@ -19,7 +19,7 @@ function DeleteBtn({task, date, notesList, setNotesList}) {
         }))
     }
 
-    return <button onClick={clickHandler}>Удалить</button>
+    return <button onClick={clickHandler} className="edit-button">Удалить</button>
 }
 
 export default DeleteBtn;

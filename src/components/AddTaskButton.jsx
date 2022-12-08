@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import { Button} from 'react-materialize';
 
 function AddTaskButton({date, notesList, setNotesList}) {
     const clickHandler = () => {
@@ -20,7 +21,6 @@ function AddTaskButton({date, notesList, setNotesList}) {
         }
     }
 
-    return <button onClick={clickHandler}>Добавить заметку</button>
+    return <button onClick={clickHandler} className="add-button">Добавить заметку</button>
 }
-
 export default AddTaskButton;

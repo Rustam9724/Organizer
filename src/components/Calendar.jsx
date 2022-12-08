@@ -7,7 +7,9 @@ function Calendar({date, setDate}) {
     let index = (firstDayOfMonth.getDay() + 6) % 7;
 
     function clickHandler(event) {
-        setDate(new Date(`${date.getFullYear()}-${date.getMonth() + 1}-${event.target.textContent}`))
+        if (event.target.textContent !== '') {
+            setDate(new Date(`${date.getFullYear()}-${date.getMonth() + 1}-${event.target.textContent}`));
+        }
     }
 
     let ROWS;
